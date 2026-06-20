@@ -61,7 +61,7 @@ PRESETS: dict[str, ChannelPreset] = {
             {
                 "lang": "en",
                 "label": "English",
-                "tts_voice": "en-US-GuyNeural",
+                "tts_voice": "en-US-ChristopherNeural",
                 "caption_font": "BebasNeue-Regular.ttf",
                 "caption_font_name": "Bebas Neue",
                 "yt_token_env": "YT_REFRESH_TOKEN_EN",
@@ -218,7 +218,7 @@ PRESETS: dict[str, ChannelPreset] = {
             {
                 "lang": "en",
                 "label": "English",
-                "tts_voice": "en-US-GuyNeural",
+                "tts_voice": "en-US-ChristopherNeural",
                 "caption_font": "BebasNeue-Regular.ttf",
                 "caption_font_name": "Bebas Neue",
                 "yt_token_env": "YT_REFRESH_TOKEN_EN",
