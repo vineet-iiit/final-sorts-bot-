@@ -204,22 +204,38 @@ PRESETS: dict[str, ChannelPreset] = {
         "id": "hindi_myth",
         "label": "Hindi mythology & devotion Shorts (Ganesha → Shiva → … by IST day)",
         "topic_rotation": "myth",
-        "language": "hi",
-        "min_words": 100,
-        # Edge TTS Hindi: Swara = warm female (common for katha / devotion). Override: hi-IN-MadhurNeural (male).
-        "tts_voice": "hi-IN-SwaraNeural",
-        "caption_font": "NotoSansDevanagari-Bold.ttf",
-        "caption_font_name": "Noto Sans Devanagari",
-        "yt_token_env": "YT_REFRESH_TOKEN_MYTH",
-        "extra_yt_token_envs": ["YT_REFRESH_TOKEN_MYTH_2"],
+        "variants": [
+            {
+                "lang": "hi",
+                "label": "Hindi",
+                # Edge TTS Hindi: Swara = warm female (common for katha / devotion).
+                "tts_voice": "hi-IN-SwaraNeural",
+                "caption_font": "NotoSansDevanagari-Bold.ttf",
+                "caption_font_name": "Noto Sans Devanagari",
+                "yt_token_env": "YT_REFRESH_TOKEN_MYTH",
+                "min_words": 100,
+            },
+            {
+                "lang": "en",
+                "label": "English",
+                "tts_voice": "en-US-GuyNeural",
+                "caption_font": "BebasNeue-Regular.ttf",
+                "caption_font_name": "Bebas Neue",
+                "yt_token_env": "YT_REFRESH_TOKEN_EN",
+                "min_words": 70,
+            },
+        ],
         "groq_system_hint": (
-            "You write respectful Hindi Shorts about Indian mythology, epics, and devotion — for a general audience. "
-            "LANGUAGE: full_narration, youtube_title, youtube_description entirely in Devanagari Hindi. "
+            "You write respectful Shorts about Indian mythology, epics, and devotion — in MULTIPLE languages. "
+            "The same story will be published as separate videos on different language channels. "
             "IMAGE PROMPTS: English only — cinematic scene descriptions (no text in image). "
-            "CRITICAL LENGTH: full_narration 105-135 Devanagari words (~40-50 sec spoken). "
             "Tone: warm, storytelling, reverent — NOT mocking faith. Retell traditional narratives in your own words; "
             "do not copy long scripture passages. PG-13, no graphic gore, no hate toward any group. "
-            "No hashtags in narration. The creator gives a specific story angle in the user message — stay on that topic."
+            "No hashtags in narration. The creator gives a specific story angle in the user message — stay on that topic. "
+            "HINDI: variants.hi.full_narration, youtube_title, youtube_description in Devanagari Hindi. Aim 105-135 Hindi words (~40-50 sec). "
+            "ENGLISH: variants.en.full_narration, youtube_title, youtube_description in English. Aim 100-130 English words (~35-45 sec). "
+            "BILINGUAL RULE: the SAME story must be expressed naturally in each language — not a literal translation; "
+            "rephrase so each version sounds native and flows well for spoken audio."
         ),
         "segment_count": 6,
         "image_style_suffix": (
@@ -302,15 +318,37 @@ PRESETS: dict[str, ChannelPreset] = {
     "ghost_stories": {
         "id": "ghost_stories",
         "label": "Ghost / horror storytime Short",
-        "min_words": 100,
+        "variants": [
+            {
+                "lang": "en",
+                "label": "English",
+                "tts_voice": "en-US-ChristopherNeural",
+                "caption_font": "CreepsterCaps.ttf",
+                "caption_font_name": "Creepster",
+                "yt_token_env": "YT_REFRESH_TOKEN",
+                "min_words": 100,
+            },
+            {
+                "lang": "hi",
+                "label": "Hindi",
+                "tts_voice": "hi-IN-MadhurNeural",
+                "caption_font": "NotoSansDevanagari-Bold.ttf",
+                "caption_font_name": "Noto Sans Devanagari",
+                "yt_token_env": "YT_REFRESH_TOKEN_HI",
+                "min_words": 80,
+            },
+        ],
         "groq_system_hint": (
-            "You write spooky ghost story Shorts for YouTube. "
-            "CRITICAL LENGTH RULE: The TOTAL word count across ALL 6 segments MUST be 120-140 words. "
-            "Each segment narration = 2-3 sentences, about 20-25 words per segment. "
-            "This produces 35-45 seconds of audio when read aloud. "
+            "You write spooky ghost story Shorts for YouTube — in MULTIPLE languages. "
+            "The same story will be published as separate videos on different language channels. "
             "Tone: eerie, suspenseful, creepy but NOT gory or violent. "
-            "Segment 1: hook that stops scrolling. Last segment: chilling twist or unanswered question. "
-            "All stories fictional. Original characters. PG-13. No hashtags in narration."
+            "Hook in opening line. Chilling twist or unanswered question at the end. "
+            "All stories fictional. Original characters. PG-13. No hashtags in narration. "
+            "IMAGE PROMPTS: English only — dark atmospheric scene descriptions (no text in image). "
+            "ENGLISH: variants.en.full_narration 110-140 English words (~35-45 sec). Natural spoken narration, no segment breaks. "
+            "HINDI: variants.hi.full_narration 100-130 Devanagari Hindi words (~40-50 sec). Natural spoken Hindi narration. "
+            "BILINGUAL RULE: retell the SAME spooky story natively in each language — do not literal-translate; "
+            "rephrase so each version sounds natural when spoken aloud."
         ),
         "segment_count": 6,
         "image_style_suffix": (

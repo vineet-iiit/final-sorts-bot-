@@ -22,6 +22,7 @@ env:
   # Set this secret if you want the same Short on another channel.
   YT_REFRESH_TOKEN_MYTH_2: ${{ secrets.YT_REFRESH_TOKEN_MYTH_2 }}
   YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+  YT_REFRESH_TOKEN_EN: ${{ secrets.YT_REFRESH_TOKEN_EN }}
 
 jobs:
   generate-and-upload:
