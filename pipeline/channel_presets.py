@@ -52,7 +52,7 @@ PRESETS: dict[str, ChannelPreset] = {
             {
                 "lang": "hi",
                 "label": "Hindi",
-                "tts_voice": "hi-IN-MadhurNeural",
+                "tts_voice": "hi-IN-SwaraNeural",
                 "caption_font": "NotoSansDevanagari-Bold.ttf",
                 "caption_font_name": "Noto Sans Devanagari",
                 "yt_token_env": "YT_REFRESH_TOKEN_HI",
@@ -331,7 +331,7 @@ PRESETS: dict[str, ChannelPreset] = {
             {
                 "lang": "hi",
                 "label": "Hindi",
-                "tts_voice": "hi-IN-MadhurNeural",
+                "tts_voice": "hi-IN-SwaraNeural",
                 "caption_font": "NotoSansDevanagari-Bold.ttf",
                 "caption_font_name": "Noto Sans Devanagari",
                 "yt_token_env": "YT_REFRESH_TOKEN_HI",
