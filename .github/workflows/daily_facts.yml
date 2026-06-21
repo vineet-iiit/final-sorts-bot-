@@ -2,9 +2,12 @@ name: Daily Facts Short
 
 on:
   schedule:
-    # Pick a time offset from the ghost_stories workflow to avoid overlap.
-    - cron: "0 4 * * *"   # 04:00 UTC ≈ 09:30 IST
-    - cron: "0 14 * * *"  # 14:00 UTC ≈ 19:30 IST
+    - cron: "0 1 * * *"   # 01:00 UTC = 06:30 IST
+    - cron: "0 5 * * *"   # 05:00 UTC = 10:30 IST
+    - cron: "0 9 * * *"   # 09:00 UTC = 14:30 IST
+    - cron: "0 13 * * *"  # 13:00 UTC = 18:30 IST
+    - cron: "0 17 * * *"  # 17:00 UTC = 22:30 IST
+    - cron: "0 21 * * *"  # 21:00 UTC = 02:30 IST
   workflow_dispatch:
     inputs:
       topic:

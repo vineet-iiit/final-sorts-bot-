@@ -2,9 +2,12 @@ name: Daily Hindi Myth Short
 
 on:
   schedule:
-    # 06:30 IST = 01:00 UTC; 18:30 IST = 13:00 UTC
-    - cron: "0 1 * * *"
-    - cron: "0 13 * * *"
+    - cron: "0 0 * * *"   # 00:00 UTC = 05:30 IST
+    - cron: "0 4 * * *"   # 04:00 UTC = 09:30 IST
+    - cron: "0 8 * * *"   # 08:00 UTC = 13:30 IST
+    - cron: "0 12 * * *"  # 12:00 UTC = 17:30 IST
+    - cron: "0 16 * * *"  # 16:00 UTC = 21:30 IST
+    - cron: "0 20 * * *"  # 20:00 UTC = 01:30 IST
   workflow_dispatch:
     inputs:
       topic:
