@@ -48,29 +48,14 @@ PRESETS: dict[str, ChannelPreset] = {
     "facts": {
         "id": "facts",
         "label": "Mind-blowing facts Short (bilingual — Hindi + English)",
-        "variants": [
-            {
-                "lang": "hi",
-                "label": "Hindi",
-                "tts_voice": "hi-IN-SwaraNeural",
-                "caption_font": "NotoSansDevanagari-Bold.ttf",
-                "caption_font_name": "Noto Sans Devanagari",
-                "yt_token_env": "YT_REFRESH_TOKEN_HI",
-                "min_words": 80,
-            },
-            {
-                "lang": "en",
-                "label": "English",
-                "tts_voice": "en-US-ChristopherNeural",
-                "caption_font": "BebasNeue-Regular.ttf",
-                "caption_font_name": "Bebas Neue",
-                "yt_token_env": "YT_REFRESH_TOKEN_EN",
-                "min_words": 70,
-            },
-        ],
+        "language": "en",
+        "tts_voice": "en-US-ChristopherNeural",
+        "caption_font": "BebasNeue-Regular.ttf",
+        "caption_font_name": "Bebas Neue",
+        "yt_token_env": "YT_REFRESH_TOKEN_EN",
+        "min_words": 70,
         "groq_system_hint": (
-            "You write punchy YouTube Shorts about surprising, verified facts — in MULTIPLE languages. "
-            "The same fact will be published as separate videos on different language channels. "
+            "You write punchy YouTube Shorts about surprising, verified facts. "
             "STRUCTURE: hook fact in opening, supporting facts in the middle, punchline + takeaway at end. "
             "TONE: energetic, curious, confident. No clickbait lies. "
             "Each fact must be broadly accurate; if unsure, use safer wording like "
@@ -81,14 +66,8 @@ PRESETS: dict[str, ChannelPreset] = {
             "'anime', or 'stylized'. Examples: 'a real octopus underwater in clear blue ocean, sunlight rays', "
             "'close-up macro photo of a honeybee on a yellow flower', "
             "'wide shot of Saturn V rocket launching at night with flames'. "
-            "BILINGUAL RULE: the SAME story/facts must be expressed naturally in each language — "
-            "do not literally translate word-for-word; rephrase so each version sounds native and flows well. "
-            "HINDI LENGTH: variants.hi.full_narration should be long-form — "
-            "aim ~150 Devanagari words (acceptable band roughly 135-170) with rich detail and connective phrases "
-            "so the Hindi voiceover is substantial (~55-70 seconds). "
-            "ENGLISH LENGTH: variants.en.full_narration must be long-form too — "
-            "aim 120-155 English words (never a short teaser); include hook, 3-4 developed beats with examples, "
-            "and a strong closing line so the English voiceover is ~40-50 seconds."
+            "LENGTH: full_narration must be long-form — aim 120-155 English words; include hook, "
+            "3-4 developed beats with examples, and a strong closing line so the voiceover is ~40-50 seconds."
         ),
         "segment_count": 5,
         "image_style_suffix": (
@@ -204,38 +183,19 @@ PRESETS: dict[str, ChannelPreset] = {
         "id": "hindi_myth",
         "label": "Hindi mythology & devotion Shorts (Ganesha → Shiva → … by IST day)",
         "topic_rotation": "myth",
-        "variants": [
-            {
-                "lang": "hi",
-                "label": "Hindi",
-                # Edge TTS Hindi: Swara = warm female (common for katha / devotion).
-                "tts_voice": "hi-IN-SwaraNeural",
-                "caption_font": "NotoSansDevanagari-Bold.ttf",
-                "caption_font_name": "Noto Sans Devanagari",
-                "yt_token_env": "YT_REFRESH_TOKEN_MYTH",
-                "min_words": 100,
-            },
-            {
-                "lang": "en",
-                "label": "English",
-                "tts_voice": "en-US-ChristopherNeural",
-                "caption_font": "BebasNeue-Regular.ttf",
-                "caption_font_name": "Bebas Neue",
-                "yt_token_env": "YT_REFRESH_TOKEN_EN",
-                "min_words": 70,
-            },
-        ],
+        "language": "en",
+        "tts_voice": "en-US-ChristopherNeural",
+        "caption_font": "BebasNeue-Regular.ttf",
+        "caption_font_name": "Bebas Neue",
+        "yt_token_env": "YT_REFRESH_TOKEN_EN",
+        "min_words": 70,
         "groq_system_hint": (
-            "You write respectful Shorts about Indian mythology, epics, and devotion — in MULTIPLE languages. "
-            "The same story will be published as separate videos on different language channels. "
+            "You write respectful English Shorts about Indian mythology, epics, and devotion — for a general audience. "
             "IMAGE PROMPTS: English only — cinematic scene descriptions (no text in image). "
             "Tone: warm, storytelling, reverent — NOT mocking faith. Retell traditional narratives in your own words; "
             "do not copy long scripture passages. PG-13, no graphic gore, no hate toward any group. "
             "No hashtags in narration. The creator gives a specific story angle in the user message — stay on that topic. "
-            "HINDI: variants.hi.full_narration, youtube_title, youtube_description in Devanagari Hindi. Aim 105-135 Hindi words (~40-50 sec). "
-            "ENGLISH: variants.en.full_narration, youtube_title, youtube_description in English. Aim 100-130 English words (~35-45 sec). "
-            "BILINGUAL RULE: the SAME story must be expressed naturally in each language — not a literal translation; "
-            "rephrase so each version sounds native and flows well for spoken audio."
+            "LENGTH: full_narration 100-130 English words (~35-45 sec spoken). Natural continuous narration, no segment markers."
         ),
         "segment_count": 6,
         "image_style_suffix": (
@@ -318,37 +278,19 @@ PRESETS: dict[str, ChannelPreset] = {
     "ghost_stories": {
         "id": "ghost_stories",
         "label": "Ghost / horror storytime Short",
-        "variants": [
-            {
-                "lang": "en",
-                "label": "English",
-                "tts_voice": "en-US-ChristopherNeural",
-                "caption_font": "CreepsterCaps.ttf",
-                "caption_font_name": "Creepster",
-                "yt_token_env": "YT_REFRESH_TOKEN",
-                "min_words": 100,
-            },
-            {
-                "lang": "hi",
-                "label": "Hindi",
-                "tts_voice": "hi-IN-SwaraNeural",
-                "caption_font": "NotoSansDevanagari-Bold.ttf",
-                "caption_font_name": "Noto Sans Devanagari",
-                "yt_token_env": "YT_REFRESH_TOKEN_HI",
-                "min_words": 80,
-            },
-        ],
+        "language": "en",
+        "tts_voice": "en-US-ChristopherNeural",
+        "caption_font": "CreepsterCaps.ttf",
+        "caption_font_name": "Creepster",
+        "yt_token_env": "YT_REFRESH_TOKEN",
+        "min_words": 100,
         "groq_system_hint": (
-            "You write spooky ghost story Shorts for YouTube — in MULTIPLE languages. "
-            "The same story will be published as separate videos on different language channels. "
+            "You write spooky ghost story Shorts for YouTube in English. "
             "Tone: eerie, suspenseful, creepy but NOT gory or violent. "
             "Hook in opening line. Chilling twist or unanswered question at the end. "
             "All stories fictional. Original characters. PG-13. No hashtags in narration. "
             "IMAGE PROMPTS: English only — dark atmospheric scene descriptions (no text in image). "
-            "ENGLISH: variants.en.full_narration 110-140 English words (~35-45 sec). Natural spoken narration, no segment breaks. "
-            "HINDI: variants.hi.full_narration 100-130 Devanagari Hindi words (~40-50 sec). Natural spoken Hindi narration. "
-            "BILINGUAL RULE: retell the SAME spooky story natively in each language — do not literal-translate; "
-            "rephrase so each version sounds natural when spoken aloud."
+            "LENGTH: full_narration 110-140 English words (~35-45 sec). Natural spoken narration, no segment breaks."
         ),
         "segment_count": 6,
         "image_style_suffix": (
